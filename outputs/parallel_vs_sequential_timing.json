@@ -1,0 +1,37 @@
+{
+  "test_note": "78-year-old female with atrial fibrillation, CHF, CKD, DM2 presenting with pneumonia and decompensated heart failure",
+  "sequential_execution": {
+    "urgency_chain": {"time_ms": 1580, "result": {"urgency_level": 5, "urgency_label": "EMERGENT"}},
+    "icd10_chain": {"time_ms": 1620, "result": {"primary_code": "J18.9", "primary_description": "Pneumonia, unspecified organism"}},
+    "summary_chain": {"time_ms": 1620, "result": {"one_liner": "78F with CHF, AFib, CKD presenting with pneumonia-triggered acute decompensated heart failure and early sepsis."}},
+    "total_time_ms": 4820
+  },
+  "parallel_execution": {
+    "all_chains_parallel": {
+      "time_ms": 1940,
+      "urgency_result": {"urgency_level": 5, "urgency_label": "EMERGENT", "disposition": "immediate_ed"},
+      "icd10_result": {
+        "primary_code": "J18.9",
+        "primary_description": "Pneumonia, unspecified organism",
+        "secondary_codes": [
+          {"code": "I50.23", "description": "Acute on chronic systolic heart failure"},
+          {"code": "N18.3b", "description": "Chronic kidney disease, stage 3b"},
+          {"code": "A41.9", "description": "Sepsis, unspecified organism"}
+        ]
+      },
+      "summary_result": {
+        "one_liner": "78F with CHF, AFib, CKD presenting with pneumonia-triggered acute decompensated heart failure and early sepsis.",
+        "key_findings": ["Bilateral infiltrates", "Elevated procalcitonin 2.8", "proBNP 8400", "Lactate 2.6", "AKI on CKD"],
+        "red_flags": ["Hypotension", "Hypoxia", "Elevated lactate", "AKI on CKD"]
+      }
+    },
+    "total_time_ms": 1940
+  },
+  "performance_comparison": {
+    "sequential_total_ms": 4820,
+    "parallel_total_ms": 1940,
+    "speedup": "2.5x",
+    "time_saved_ms": 2880,
+    "note": "Parallel execution completes in the time of the slowest individual chain rather than the sum of all chains."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "label": "Emergency Presentation",
+      "extraction": {
+        "chief_complaint": "Acute substernal chest pain with radiation to jaw",
+        "symptoms": ["chest pain", "diaphoresis", "dyspnea"],
+        "vital_sign_abnormalities": ["Hypotension (92/58)", "Tachycardia (118)", "Hypoxia (SpO2 90%)"],
+        "urgency_assessment": "STEMI with hemodynamic instability, life-threatening",
+        "urgency_level": 5,
+        "urgency_label": "EMERGENT"
+      },
+      "summary": "67-year-old male with STEMI (ST elevation V1-V4, troponin 4.2) presenting with chest pain and hemodynamic instability. Emergent PCI activated."
+    },
+    {
+      "label": "Routine Visit",
+      "extraction": {
+        "chief_complaint": "Annual wellness exam",
+        "symptoms": [],
+        "vital_sign_abnormalities": [],
+        "urgency_assessment": "Healthy patient with no acute concerns. Routine preventive care.",
+        "urgency_level": 1,
+        "urgency_label": "ROUTINE"
+      },
+      "summary": "Healthy 44-year-old female presenting for annual wellness exam with no complaints, normal vitals, and unremarkable physical exam. Routine labs ordered and flu vaccine given."
+    },
+    {
+      "label": "Moderate Acuity",
+      "extraction": {
+        "chief_complaint": "Acute gout flare of right first MTP joint",
+        "symptoms": ["acute swelling", "redness", "severe pain", "inability to bear weight"],
+        "vital_sign_abnormalities": [],
+        "urgency_assessment": "Acute gout flare in known gout patient. Painful but not dangerous.",
+        "urgency_level": 2,
+        "urgency_label": "LOW"
+      },
+      "summary": "52-year-old male with known gout presenting with acute flare of right first MTP joint after dietary indiscretion. Joint aspirate confirms diagnosis with negatively birefringent crystals."
+    }
+  ]
+}

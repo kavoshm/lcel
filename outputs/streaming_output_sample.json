@@ -1,0 +1,55 @@
+{
+  "clinical_note": "45-year-old female with acute pleuritic chest pain, hemoptysis, and DVT risk factors on long-haul flight",
+  "streaming_patterns": {
+    "pattern_1_basic_streaming": {
+      "description": "Token-by-token output via .stream()",
+      "total_chunks": 142,
+      "total_time_seconds": 3.41,
+      "time_to_first_token_ms": 340,
+      "output_preview": "## Chief Complaint & HPI Summary\n45-year-old female presenting with acute left-sided pleuritic chest pain and dyspnea of 6 hours duration, onset during a long-haul flight..."
+    },
+    "pattern_2_async_streaming": {
+      "description": "Non-blocking streaming via .astream() for web frameworks",
+      "total_chunks": 142,
+      "total_time_seconds": 3.38,
+      "note": "Same output, async-compatible for FastAPI/Django integration"
+    },
+    "pattern_3_event_streaming": {
+      "description": "Pipeline step events via .astream_events()",
+      "events_observed": [
+        "on_chain_start: Preprocess",
+        "on_chain_start: FormatPrompt",
+        "on_chat_model_start: LLMCall",
+        "on_chat_model_stream: LLMCall (142 chunks)",
+        "on_chain_start: ParseOutput",
+        "on_chain_end: ParseOutput"
+      ],
+      "unique_pipeline_events": 6,
+      "note": "Shows intermediate pipeline steps as they execute — useful for debugging and audit logging"
+    }
+  },
+  "structured_analysis_output": {
+    "chief_complaint": "Acute left-sided pleuritic chest pain with hemoptysis",
+    "key_findings": [
+      "Tachycardia (HR 112), tachypnea (RR 22), hypoxia (SpO2 92%)",
+      "Right calf swelling and tenderness (suggests DVT)",
+      "Markedly elevated D-dimer (4.2, >8x normal)",
+      "ABG: respiratory alkalosis with hypoxemia (pO2 68)",
+      "ECG: S1Q3T3 pattern and right axis deviation"
+    ],
+    "assessment": "Clinical presentation highly consistent with acute pulmonary embolism with concurrent DVT",
+    "differential_diagnosis": [
+      "Pulmonary embolism (most likely)",
+      "Pneumothorax",
+      "Pneumonia with parapneumonic effusion",
+      "Acute coronary syndrome (less likely)"
+    ],
+    "recommended_workup": [
+      "CT pulmonary angiography (CTPA)",
+      "Lower extremity venous duplex ultrasound",
+      "Echocardiogram (assess right heart strain)",
+      "Troponin and BNP (prognostic markers)"
+    ],
+    "disposition": "Admit to monitored bed. Initiate therapeutic anticoagulation (heparin drip) pending CTPA."
+  }
+}

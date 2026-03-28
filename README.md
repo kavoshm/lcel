@@ -93,7 +93,14 @@ LCEL chains support token-by-token streaming natively, with visibility into inte
 pip install -r requirements.txt
 ```
 
-You need an `OPENAI_API_KEY` environment variable set:
+Copy the environment template and add your API key:
+
+```bash
+cp .env.example .env
+# Edit .env and add your OpenAI API key
+```
+
+Or set it directly:
 
 ```bash
 export OPENAI_API_KEY="sk-..."
